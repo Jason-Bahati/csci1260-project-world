@@ -3,7 +3,9 @@
 
 class IAmplified {
    public:
-    virtual int methode() = 0;
+    virtual int WattsRequired() const = 0;
+
+    virtual ~IAmplified() = default;
 };
 
 #endif
