@@ -2,4 +2,5 @@ build/
 out/
 .vs/
 .DS_Store
-.txt
+*.txt
+!CMakeLists.txt
