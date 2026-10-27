@@ -74,8 +74,8 @@ void Venue::PrintReport()
 
     for (int i = 0; i < static_cast<int>(acts.size()); i++) {
         std::cout << " " << std::left << std::setw(20) << acts[i]->getName()
-                  << " " << std::setw(10) << acts[i]->genre() << std::right
-                  << std::setw(9) << acts[i]->PerformerCount() << std::setw(8)
+                  << " " << std::setw(10) << acts[i]->Genre() << std::right
+                  << std::setw(9) << acts[i]->performerCount() << std::setw(8)
                   << acts[i]->getSongCount() << std::setw(8)
                   << acts[i]->SetLength() << std::endl;
     }
