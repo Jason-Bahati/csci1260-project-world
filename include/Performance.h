@@ -25,7 +25,6 @@ class Performance {
     std::string date;
     int attendance;
 };
-#endif // PERFORMANCE_H
 
 namespace std {
 template <> struct hash<Performance> {
@@ -37,3 +36,4 @@ template <> struct hash<Performance> {
     }
 };
 } // namespace std
+#endif // PERFORMANCE_H
