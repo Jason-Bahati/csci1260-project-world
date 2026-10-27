@@ -1,7 +1,9 @@
 # Concert Venue
 
-**Name:** Jason Bahati · **Section:** CSCI 1260-002
-**Language:** C++ 
+**Name:** Jason Bahati · **Section:** CSCI 1260-002  
+
+**Language:** C++  
+
 **World:** A concert venue that books rock bands, jazz ensembles, and DJs, runs sound checks through its PA system, and keeps a record of past performances.
 
 ## How to run
