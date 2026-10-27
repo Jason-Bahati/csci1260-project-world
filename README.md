@@ -9,7 +9,7 @@
 ## How to run
 from Repo root:
 ```
-cmake -S . -B build && cmake --build build && ./build/venue
+cmake -S . -B build && cmake --build build && ./build/app
 ```
 Or, after the first configure, cmake --build build --target run.
 Run it from the repository root: the program reads data.txt and writes soundboard_log.txt there. It takes no keyboard input and runs from start to finish
