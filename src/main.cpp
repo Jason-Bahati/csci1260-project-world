@@ -23,9 +23,6 @@ std::string tf(bool b)
 
 int main()
 {
-    // Load the past performances first. Section 4 needs them. Each bad line is
-    // caught, its message is saved for section 5, and loading carries on with
-    // the next line.
     std::vector<Performance> records;
     std::vector<std::string> loadErrors;
     int lineNumber = 0;
@@ -38,7 +35,7 @@ int main()
     std::string line;
     while (std::getline(data, line)) {
         if (!line.empty() && line[line.size() - 1] == '\r') {
-            line.erase(line.size() - 1); // Windows line endings
+            line.erase(line.size() - 1);
         }
         if (line.empty()) {
             continue;
@@ -58,37 +55,38 @@ int main()
 
     Venue venue("The Echo Room", 2000);
 
-    RockBand* midnightStatic = new RockBand("Midnight Static", 4, 3);
-    RockBand* velvetRiot = new RockBand("Velvet Riot", 5, 4);
-    JazzBand* blueHour = new JazzBand("Blue Hour Quintet", 5, "trumpet");
-    DJ* djLumen = new DJ("DJ Lumen", "House", 2);
+    RockBand* theStrokes = new RockBand("The Strokes", 5, 4);
+    RockBand* pinkFloyd = new RockBand("Pink Floyd", 4, 3);
+    JazzBand* coltraneQuartet =
+        new JazzBand("Coltrane Quartet", 4, "Saxophone");
+    DJ* skrillex = new DJ("Skrillex", "Dubstep", 4);
 
-    midnightStatic->AddSong("Smoke Signals", 4);
-    midnightStatic->AddSong("Overdrive", 5);
-    midnightStatic->AddSong("Static Bloom", 6);
-    velvetRiot->AddSong("Glass Jaw", 3);
-    velvetRiot->AddSong("Neon Funeral", 5);
-    blueHour->AddSong("Late Train", 8);
-    blueHour->AddSong("Rain on Fourth Street", 11);
-    djLumen->AddSong("Opening Mix", 25);
-    djLumen->AddSong("Peak Hour Mix", 35);
+    theStrokes->AddSong("Barely Legal", 4);
+    theStrokes->AddSong("The Adults Are Talking", 5);
+    theStrokes->AddSong("Ode To The Mets", 6);
+    pinkFloyd->AddSong("Breathe (In the air)", 3);
+    pinkFloyd->AddSong("Have a Cigar", 5);
+    coltraneQuartet->AddSong("Tea for Two", 8);
+    coltraneQuartet->AddSong("A Love Supreme: Psalm", 11);
+    skrillex->AddSong("Opening Mix", 25);
+    skrillex->AddSong("Peak Hour Mix", 35);
 
-    if (!velvetRiot->AddSong("Endless Jam", 90)) {
-        std::cout << " REJECTED: a 90 minute song for Velvet Riot" << std::endl;
+    if (!pinkFloyd->AddSong("Endless Jam", 90)) {
+        std::cout << " REJECTED: a 90 minute song for Pink Floyd" << std::endl;
     }
 
     std::vector<Act*> lineup;
-    lineup.push_back(midnightStatic);
-    lineup.push_back(velvetRiot);
-    lineup.push_back(blueHour);
-    lineup.push_back(djLumen);
+    lineup.push_back(theStrokes);
+    lineup.push_back(pinkFloyd);
+    lineup.push_back(coltraneQuartet);
+    lineup.push_back(skrillex);
 
     for (int i = 0; i < static_cast<int>(lineup.size()); i++) {
         venue.Add(lineup[i]);
     }
 
-    if (!venue.Add(blueHour)) {
-        std::cout << " REJECTED: Blue Hour Quintet is already booked"
+    if (!venue.Add(coltraneQuartet)) {
+        std::cout << " REJECTED: Coltrane Quartet is already booked"
                   << std::endl;
     }
     std::cout << std::endl;
@@ -98,22 +96,22 @@ int main()
 
     std::cout << "Composition check" << std::endl;
     std::cout << " " << std::left << std::setw(46)
-              << "Songs Midnight Static built and owns:"
+              << "Songs The Strokes built and owns:"
               << " " << std::right << std::setw(11)
-              << midnightStatic->getSongCount() << std::endl;
-    std::cout << midnightStatic->SetlistLines() << std::endl;
+              << theStrokes->getSongCount() << std::endl;
+    std::cout << theStrokes->SetlistLines() << std::endl;
     std::cout << std::endl;
 
     std::cout << "Aggregation check" << std::endl;
     {
         Venue popUp("Rooftop Pop-Up", 300);
-        popUp.Add(djLumen);
+        popUp.Add(skrillex);
         std::cout << " " << std::left << std::setw(46)
                   << "Acts booked at the Rooftop Pop-Up:"
                   << " " << std::right << std::setw(11) << popUp.getCount()
                   << std::endl;
-    } // popUp is destroyed here, but the act it held is not
-    std::cout << " After the pop-up closed: " << djLumen->ToString()
+    }
+    std::cout << " After the pop-up closed: " << skrillex->ToString()
               << std::endl;
     std::cout << std::endl;
 
@@ -124,11 +122,11 @@ int main()
     // is not allowed
 
     std::cout << " RockBand -> Band -> Act" << std::endl;
-    std::cout << "    " << midnightStatic->Describe() << std::endl;
+    std::cout << "    " << theStrokes->Describe() << std::endl;
     std::cout << " JazzBand -> Band -> Act" << std::endl;
-    std::cout << "    " << blueHour->Describe() << std::endl;
+    std::cout << "    " << coltraneQuartet->Describe() << std::endl;
     std::cout << " DJ -> Act" << std::endl;
-    std::cout << "    " << djLumen->Describe() << std::endl;
+    std::cout << "    " << skrillex->Describe() << std::endl;
     std::cout << std::endl;
 
     std::cout << "=== 3. Polymorphism and Interfaces ===" << std::endl;
@@ -162,9 +160,9 @@ int main()
 
     std::cout << "=== 4. Built in Contracts and Collections ===" << std::endl;
 
-    Performance first("Midnight Static", "2026-09-05", 1450);
-    Performance corrected("Midnight Static", "2026-09-05", 1460);
-    Performance other("Velvet Riot", "2026-09-05", 1450);
+    Performance first("The Strokes", "2026-09-05", 1450);
+    Performance corrected("The Strokes", "2026-09-05", 1460);
+    Performance other("Pink Floyd", "2026-09-05", 1450);
 
     std::cout << "Contract 1: Equals and GetHashCode" << std::endl;
     std::cout << " " << std::left << std::setw(50)

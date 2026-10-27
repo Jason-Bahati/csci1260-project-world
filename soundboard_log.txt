@@ -1,0 +1,7 @@
+LOG OPENED
+  1 doors open at The Echo Room
+  2 The Strokes on stage
+  3 Pink Floyd on stage
+  4 Coltrane Quartet on stage
+  5 Skrillex on stage
+LOG CLOSED, 5 lines written

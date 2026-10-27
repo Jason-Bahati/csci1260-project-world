@@ -4,3 +4,5 @@ out/
 .DS_Store
 *.txt
 !CMakeLists.txt
+!soundboard_log.txt
+!data.txt
