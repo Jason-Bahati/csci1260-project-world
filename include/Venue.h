@@ -6,17 +6,21 @@
 #include "Act.h"
 
 class Venue {
-   private:
-    std::string venueName;
-    std::vector<std::shared_ptr<Act>> acts;
+  private:
+    std::string name;
+    int capacity;
+    std::vector<Act*> acts;
 
-   public:
-    Venue();
+  public:
+    Venue(std::string name, int capacity);
 
-    std::string getVenuName() const { return venueName; }
+    bool Add(Act* act);
+    Act* Find(std::string name);
+    int TotalMinutes();
+    void PrintReport();
 
-    bool doubleBook();
-
-    int add();
+    std::string getName() const;
+    int getCapacity() const;
+    int getCount() const;
 };
-#endif  // VENUE_H
+#endif // VENUE_H

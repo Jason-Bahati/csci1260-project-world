@@ -7,8 +7,8 @@ const int WATTS_PER_DECK = 300;
 const int MONITOR_WATTS = 1500;
 } // namespace
 
-DJ::DJ(const std::string& name, const std::string& genre, int deckCount)
-    : Act(name), genre_(genre), deckCount_(deckCount)
+DJ::DJ(std::string name, std::string genre, int deckCount)
+    : Act(name), genre(genre), deckCount(deckCount)
 {
     if (genre.empty()) {
         throw std::invalid_argument("A DJ must have a genre: " + name);
@@ -21,12 +21,12 @@ DJ::DJ(const std::string& name, const std::string& genre, int deckCount)
 
 int DJ::getDeckCount() const
 {
-    return deckCount_;
+    return deckCount;
 }
 
-std::string DJ::genre() const
+std::string DJ::Genre() const
 {
-    return genre_;
+    return genre;
 }
 
 int DJ::performerCount() const
@@ -36,17 +36,17 @@ int DJ::performerCount() const
 
 int DJ::WattsRequired() const
 {
-    return MONITOR_WATTS + deckCount_ * WATTS_PER_DECK;
+    return MONITOR_WATTS + deckCount * WATTS_PER_DECK;
 }
 
 std::string DJ::rigDescribe() const
 {
-    return getName() + ": " + std::to_string(deckCount_) +
+    return getName() + ": " + std::to_string(deckCount) +
            " decks, mixer, booth monitors";
 }
 
-std::string DJ::describe() const
+std::string DJ::Describe() const
 {
 
-    return Act::describe() + " | " + std::to_string(deckCount_) + " decks";
+    return Act::Describe() + " | " + std::to_string(deckCount) + " decks";
 }

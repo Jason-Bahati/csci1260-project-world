@@ -7,21 +7,21 @@
 
 class DJ : public Act, public IAmplified {
   private:
-    std::string genre_;
-    int deckCount_;
+    std::string genre;
+    int deckCount;
 
   public:
-    DJ(const std::string& name, const std::string& genre, int deckCount);
+    DJ(std::string name, std::string genre, int deckCount);
 
     int getDeckCount() const;
 
-    std::string genre() const override;
+    std::string Genre() const override;
     int performerCount() const override;
 
     int WattsRequired() const override;
     std::string rigDescribe() const override;
 
-    std::string describe() const override;
+    std::string Describe() const override;
 };
 
 #endif // DJ_H

@@ -5,7 +5,7 @@
 
 class RockBand : public Band, public IAmplified {
   public:
-    RockBand(const std::string& name, int memberCount, int ampCount);
+    RockBand(std::string name, int memberCount, int ampCount);
 
     int WattsRequired() const override;
 
@@ -13,11 +13,11 @@ class RockBand : public Band, public IAmplified {
 
     int getAmpCount() const;
 
-    std::string genre() const override;
+    std::string Genre() const override;
 
-    std::string describe() const override;
+    std::string Describe() const override;
 
   private:
-    int ampCount_;
+    int ampCount;
 };
 #endif // ROCKBAND_H

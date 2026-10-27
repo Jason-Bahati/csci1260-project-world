@@ -9,9 +9,9 @@ Band::Band(const std::string& name, int memberCount)
         throw std::invalid_argument("A Band needs to have atleast 2 members");
     }
 }
-std::string Band::describe() const
+std::string Band::Describe() const
 {
-    return Act::describe() + " | full band lineup";
+    return Act::Describe() + " | full band lineup";
 }
 
 int Band::getMemberCount() const

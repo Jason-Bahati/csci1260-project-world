@@ -5,22 +5,26 @@
 
 class Act {
   public:
-    Act(const std::string& name);
-    virtual std::string genre() const = 0;
+    Act(std::string name);
+    virtual std::string Genre() const = 0;
     virtual int performerCount() const = 0;
+    virtual std::string Describe() const = 0;
 
-    virtual std::string describe() const;
-    void addSong(const std::string& title, int minute);
-    int setLengthMinutes() const;
-    std::string setListSummary() const;
+    std::string ToString();
+
+    bool AddSong(std::string title, int minutes);
+    int SetLength() const;
+    std::string SetlistLines();
 
     std::string getName() const;
+    int getSongCount() const;
 
     virtual ~Act() = default;
 
   private:
-    std::string name_;
-    std::vector<SetList> list;
+    std::string name;
+    std::vector<SetList> setlist;
+    int nextSeq;
 };
 
 #endif // ACT_H

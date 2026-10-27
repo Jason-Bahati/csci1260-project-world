@@ -2,9 +2,9 @@
 #include "Band.h"
 #include <stdexcept>
 
-JazzBand::JazzBand(const std::string& name, int memberCount,
-                   const std::string& leadInstrument)
-    : Band(name, memberCount), leadInstrument_(leadInstrument)
+JazzBand::JazzBand(std::string name, int memberCount,
+                   std::string leadInstrument)
+    : Band(name, memberCount), leadInstrument(leadInstrument)
 {
     if (leadInstrument.empty()) {
         throw std::invalid_argument(
@@ -14,15 +14,15 @@ JazzBand::JazzBand(const std::string& name, int memberCount,
 
 std::string JazzBand::getLeadInstrument() const
 {
-    return leadInstrument_;
+    return leadInstrument;
 }
 
-std::string JazzBand::genre() const
+std::string JazzBand::Genre() const
 {
     return "Jazz";
 }
 
-std::string JazzBand::describe() const
+std::string JazzBand::Describe() const
 {
-    return Band::describe() + " | led by " + leadInstrument_;
+    return Band::Describe() + " | led by " + leadInstrument;
 }

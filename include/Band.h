@@ -9,7 +9,7 @@ class Band : public Act {
 
     int performerCount() const override;
 
-    std::string describe() const override;
+    std::string Describe() const override;
 
     int getMemberCount() const;
 

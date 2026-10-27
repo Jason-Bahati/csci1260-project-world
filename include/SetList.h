@@ -4,15 +4,16 @@
 
 class SetList {
   public:
-    SetList(const std::string& title, int minutes);
+    SetList(int seq, std::string title, int minutes);
+    std::string Describe();
 
-    std::string toString() const;
-
+    int getSeq() const;
     std::string getTitle() const;
-    int getMinute() const;
+    int getMinutes() const;
 
   private:
-    std::string title_;
-    int minutes_;
+    int seq;
+    std::string title;
+    int minutes;
 };
 #endif // SETLIST_H
