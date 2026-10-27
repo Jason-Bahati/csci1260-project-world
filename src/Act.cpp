@@ -1,8 +1,7 @@
 #include "Act.h"
 #include "SetList.h"
-#include <iostream>
 #include <sstream>
-#include <vector>
+#include <stdexcept>
 
 Act::Act(const std::string& name) : name_(name)
 {
@@ -34,4 +33,8 @@ int Act::setLengthMinutes() const
         total += song.getMinute();
     }
     return total;
+}
+std::string Act::getName() const
+{
+    return name_;
 }

@@ -14,7 +14,7 @@ class Act {
     int setLengthMinutes() const;
     std::string setListSummary() const;
 
-    std::string getName();
+    std::string getName() const;
 
     virtual ~Act() = default;
 
