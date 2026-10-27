@@ -244,7 +244,6 @@ int main()
     }
     std::cout << std::endl;
 
-    // Closing twice must be safe. Try it on a sound check log first.
     bool safeTwice = true;
     {
         SoundBoardLog check(LOG_FILE);
@@ -258,9 +257,6 @@ int main()
         }
     }
 
-    // The show log lives inside the braces of the try block, which is C++'s
-    // using block. The throw leaves the block, the destructor runs, and close()
-    // writes the last line.
     int linesBeforeFault = 0;
     try {
         SoundBoardLog log(LOG_FILE);
@@ -298,7 +294,6 @@ int main()
         std::cout << "    " << logLines[i] << std::endl;
     }
 
-    // main created the acts, so main deletes them. The venue never owned them.
     for (int i = 0; i < static_cast<int>(lineup.size()); i++) {
         delete lineup[i];
     }
