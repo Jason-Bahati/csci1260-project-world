@@ -16,7 +16,10 @@ After it builds, ./build/app to run the program. The program reads data.txt and 
 
 CODE REVIEW:
 
-UML DIAGRAM:
+UML DIAGRAM:  
+<img width="589" height="505" alt="Hierarchy" src="https://github.com/user-attachments/assets/e5870683-c562-46e6-9b4c-e165b10a8f8d" />  
+<img width="664" height="458" alt="Contracts" src="https://github.com/user-attachments/assets/bed2bbc7-dd5b-47aa-a098-55026471c5c4" />  
+
 
 ## Design questions
 
