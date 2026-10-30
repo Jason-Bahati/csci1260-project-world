@@ -11,8 +11,8 @@ from Repo root:
 ```
 cmake -S . -B build && cmake --build build && ./build/app
 ```
-Or, after the first configure, cmake --build build --target run.
-Run it from the repository root: the program reads data.txt and writes soundboard_log.txt there. It takes no keyboard input and runs from start to finish
+If on Windows Powershell, run each command one at a time.
+After it builds, ./build/app to run the program. The program reads data.txt and writes soundboard_log.txt there. It takes no keyboard input and runs from start to finish
 
 CODE REVIEW:
 
