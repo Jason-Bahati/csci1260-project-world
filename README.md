@@ -14,7 +14,8 @@ cmake -S . -B build && cmake --build build && ./build/app
 If on Windows Powershell, run each command one at a time.
 After it builds, ./build/app to run the program. The program reads data.txt and writes soundboard_log.txt there. It takes no keyboard input and runs from start to finish
 
-CODE REVIEW:
+CODE REVIEW: https://www.youtube.com/watch?v=zbMHp6STfLY  
+
 
 UML DIAGRAM:  
 <img width="589" height="505" alt="Hierarchy" src="https://github.com/user-attachments/assets/e5870683-c562-46e6-9b4c-e165b10a8f8d" />  
@@ -34,4 +35,4 @@ UML DIAGRAM:
 
 ### 3. Adding a new kind
 
-To add an `Orchestra` under `Band`, I would create `include/Orchestra.h` and `src/Orchestra.cpp`. I would edit `include/AllHeaderFiles.h` to include the new header, `src/main.cpp` to create an orchestra and add it to the venue and the lineup. `Venue` does not change, because it only works with `Act*` and never names a concrete class. The polymorphic loop and the sound check loop stay the same: the orchestra's own `Describe()` runs, and the `dynamic_cast` finds no `IAmplified` on it, so it is reported as acoustic.
+I would create `include/Orchestra.h` and `src/Orchestra.cpp`. I would edit `include/AllHeaderFiles.h` to include the new header, `src/main.cpp` to create an orchestra and add it to the venue and the lineup. `Venue` does not change, because it only works with `Act*` and never names a concrete class. The polymorphic loop and the sound check loop stay the same: the orchestra's own `Describe()` runs, and the `dynamic_cast` finds no `IAmplified` on it, so it is reported as acoustic.
