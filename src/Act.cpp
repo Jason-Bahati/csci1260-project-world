@@ -1,5 +1,5 @@
 #include "Act.h"
-#include "Setlist.h"
+#include "SetList.h"
 #include <iostream>
 #include <sstream>
 #include <stdexcept>

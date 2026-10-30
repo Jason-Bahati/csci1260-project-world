@@ -12,6 +12,7 @@
 #ifndef DATA_FILE
 #define DATA_FILE "data.txt"
 #endif
+
 #ifndef LOG_FILE
 #define LOG_FILE "soundboard_log.txt"
 #endif
@@ -114,19 +115,16 @@ int main()
     std::cout << " After the pop-up closed: " << skrillex->ToString()
               << std::endl;
     std::cout << std::endl;
+    std::cout << std::endl;
 
     std::cout << "=== 2. Inheritance and Abstraction ===" << std::endl;
-
-    // Act bad("Nobody");   // object of abstract class type "Act" is not
-    // allowed Band band("Nobody", 3); // object of abstract class type "Band"
-    // is not allowed
-
     std::cout << " RockBand -> Band -> Act" << std::endl;
     std::cout << "    " << theStrokes->Describe() << std::endl;
     std::cout << " JazzBand -> Band -> Act" << std::endl;
     std::cout << "    " << coltraneQuartet->Describe() << std::endl;
     std::cout << " DJ -> Act" << std::endl;
     std::cout << "    " << skrillex->Describe() << std::endl;
+    std::cout << std::endl;
     std::cout << std::endl;
 
     std::cout << "=== 3. Polymorphism and Interfaces ===" << std::endl;
@@ -156,6 +154,7 @@ int main()
     }
     std::cout << " " << std::left << std::setw(46) << "Acts signing IAmplified:"
               << " " << std::right << std::setw(11) << signedCount << std::endl;
+    std::cout << std::endl;
     std::cout << std::endl;
 
     std::cout << "=== 4. Built in Contracts and Collections ===" << std::endl;
@@ -214,6 +213,7 @@ int main()
     for (int i = 0; i < static_cast<int>(distinct.size()); i++) {
         std::cout << "    " << distinct[i].ToString() << std::endl;
     }
+    std::cout << std::endl;
     std::cout << std::endl;
 
     std::cout << "=== 5. Exceptions and Files ===" << std::endl;

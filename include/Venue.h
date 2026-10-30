@@ -6,11 +6,6 @@
 #include "Act.h"
 
 class Venue {
-  private:
-    std::string name;
-    int capacity;
-    std::vector<Act*> acts;
-
   public:
     Venue(std::string name, int capacity);
 
@@ -22,5 +17,10 @@ class Venue {
     std::string getName() const;
     int getCapacity() const;
     int getCount() const;
+
+  private:
+    std::string name;
+    int capacity;
+    std::vector<Act*> acts;
 };
 #endif // VENUE_H

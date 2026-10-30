@@ -6,10 +6,6 @@
 #include <string>
 
 class DJ : public Act, public IAmplified {
-  private:
-    std::string genre;
-    int deckCount;
-
   public:
     DJ(std::string name, std::string genre, int deckCount);
 
@@ -22,6 +18,10 @@ class DJ : public Act, public IAmplified {
     std::string rigDescribe() const override;
 
     std::string Describe() const override;
+
+  private:
+    std::string genre;
+    int deckCount;
 };
 
 #endif // DJ_H
